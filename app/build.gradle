@@ -5,7 +5,7 @@ android {
     buildToolsVersion '22.0.0'
 
     defaultConfig {
-        applicationId "com.by.dpad"
+        applicationId "com.haydar.huiswerkweek5"
         minSdkVersion 15
         targetSdkVersion 22
         versionCode 1
