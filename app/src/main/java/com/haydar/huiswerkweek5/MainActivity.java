@@ -7,18 +7,17 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.RelativeLayout;
 
 
 public class MainActivity extends AppCompatActivity {
-    private ImageView oval;
+    private MainView oval;
     private Button up, down, left, right;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        oval = (ImageView) findViewById(R.id.oval);
+        oval = (MainView) findViewById(R.id.oval);
         oval.setScaleType(ImageView.ScaleType.MATRIX);
 
         up = (Button) findViewById(R.id.up);
@@ -57,29 +56,34 @@ public class MainActivity extends AppCompatActivity {
 
     private class DpadListener implements View.OnClickListener {
         public void onClick(View v) {
-            RelativeLayout.LayoutParams mParams = (RelativeLayout.LayoutParams) oval.getLayoutParams();
+//            RelativeLayout.LayoutParams mParams = (RelativeLayout.LayoutParams) oval.getLayoutParams();
             switch (v.getId()) {
                 case R.id.up: {
-                    mParams.topMargin -= 50;
-                    oval.setLayoutParams(mParams);
+                    //mParams.topMargin -= 50;
+                    //oval.setLayoutParams(mParams);
+                    oval.naarBoven();
                     break;
                 }
                 case R.id.down: {
-                    mParams.topMargin += 50;
-                    oval.setLayoutParams(mParams);
+                    //mParams.topMargin += 50;
+                    //oval.setLayoutParams(mParams);
+                    oval.naarOnder();
                     break;
                 }
                 case R.id.left: {
 
-                    mParams.leftMargin -= 50;
-                    oval.setLayoutParams(mParams);
+                    // mParams.leftMargin -= 50;
+                    // oval.setLayoutParams(mParams);
+                    oval.naarLinks();
                     break;
                 }
                 case R.id.right: {
-                    mParams.leftMargin += 50;
-                    oval.setLayoutParams(mParams);
+                    //mParams.leftMargin += 50;
+                    //oval.setLayoutParams(mParams);
+                    oval.naarRechts();
                     break;
                 }
+
             }
         }
     }

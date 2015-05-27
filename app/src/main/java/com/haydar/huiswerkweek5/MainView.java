@@ -11,6 +11,7 @@ import android.widget.ImageView;
 public class MainView extends ImageView {
     private final int colorBall = Color.BLACK;
     private int width, height;
+    private int x = 100, y = 100;
 
     public MainView(Context context, AttributeSet attrs) {
         super(context, attrs);
@@ -44,6 +45,27 @@ public class MainView extends ImageView {
         Paint paint = new Paint();
         paint.setColor(colorBall);
         paint.setStyle(Paint.Style.FILL);
-        canvas.drawCircle(width / 2, height / 2, height / 5, paint);
+        canvas.drawCircle(x, y, 50, paint);
     }
+
+    public void naarLinks() {
+        x += 5;
+        invalidate();
+    }
+
+    public void naarRechts() {
+        x -= 5;
+        invalidate();
+    }
+
+    public void naarOnder() {
+        y += 5;
+        invalidate();
+    }
+
+    public void naarBoven() {
+        y -= 5;
+        invalidate();
+    }
+
 }

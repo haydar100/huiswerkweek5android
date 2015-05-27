@@ -7,13 +7,15 @@
     tools:context=".MainActivity">
 
 
-    <include layout="@layout/content_view" />
-
     <include layout="@layout/dpad_view" />
 
-
-
-
+    <com.haydar.huiswerkweek5.MainView
+        android:id="@+id/oval"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="right"
+        android:background="#00ffff"
+        android:scaleType="matrix" />
 
 
 </LinearLayout>
